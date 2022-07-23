@@ -26,9 +26,10 @@ const IssueSchema = new Schema({
     default: true,
   },
   status_text: String,
+
+  project: {
+    type: Schema.Types.ObjectId,
+    ref: "Project",
+  },
 });
-project: {
-  type: Schema.Types.ObjectId,
-    ref: "Project"
-}
 module.exports = model("Issue", IssueSchema);
